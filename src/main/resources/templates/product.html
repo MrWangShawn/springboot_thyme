@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table th:if="${!#lists.isEmpty(products)}">
+        <tr>
+            <th>ID</th>
+            <th>名字</th>
+            <th>价格</th>
+            <th>类型</th>
+        </tr>
+        <tr th:each="product:${products}">
+            <td th:text="${product.id}"></td>
+            <td th:text="${product.name}"></td>
+            <td th:text="${product.parentId}"></td>
+            <td th:text="${product.type}"></td>
+        </tr>
+    </table>
+</body>
+</html>
